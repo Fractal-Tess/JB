@@ -1,0 +1,57 @@
+<script lang="ts">
+	import { setTheme, Theme, theme } from '$lib/components/stores/theme';
+	import SolidIcon from './SolidIcon.svelte';
+	import ButtonRounded from './buttons/ButtonRounded.svelte';
+
+	const handleThemeToggle = () => {
+		const nextTheme = $theme === Theme.Dark ? Theme.Light : Theme.Dark;
+		setTheme(nextTheme);
+	};
+</script>
+
+<nav>
+	<!-- <picture>
+		<source srcSet="banner.avif" type="image/avif" media="(min-width:768px)" />
+		<source srcSet="banner.webp" type="image/webp" media="(min-width:768px)" />
+		<source srcSet="banner.png" type="image/png " media="(min-width:768px)" />
+		<source srcSet="logo-196.png" type="image/png" />
+
+		<img decoding="async" src="banner.png" alt="website logo" />
+	</picture>
+
+	<div class="flex-1" />
+	<div>
+		<ButtonRounded text="login" />
+	</div>
+	<div class="color-mode">
+		{#if $theme == Theme.Dark}
+			<SolidIcon icon={'fa-solid fa-sun'} size={4} onClick={handleThemeToggle} />
+		{:else}
+			<SolidIcon icon={'fa-solid fa-moon'} size={4} onClick={handleThemeToggle} />
+		{/if}
+	</div>
+	<div class="settings">
+		<SolidIcon icon={'fa-solid fa-gear'} size={4} onClick={handleThemeToggle} />
+	</div> -->
+	<h1>testing</h1>
+</nav>
+
+<style lang="scss">
+	nav {
+		@apply dark:bg-black;
+	}
+
+	// nav {
+	// 	@apply flex gap-6 px-6 w-screen h-28 justify-center items-center
+	// 		md:h-20
+	// 		lg:h-16;
+	// }
+
+	// picture,
+	// img {
+	// 	@apply h-full;
+	// }
+	// img {
+	// 	@apply object-contain min-w-max dark:invert;
+	// }
+</style>

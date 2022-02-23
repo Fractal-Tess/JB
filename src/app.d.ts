@@ -3,11 +3,18 @@
 // See https://kit.svelte.dev/docs/typescript
 // for information about these interfaces
 declare namespace App {
-	interface Locals {}
+	import type { DecodedIdToken } from 'firebase-admin/auth';
+	import type { Theme, User } from './types';
+
+	interface Locals {
+		theme: Theme | null;
+	}
 
 	interface Platform {}
 
-	interface Session {}
+	interface Session {
+		theme: Theme | null;
+	}
 
 	interface Stuff {}
 }
